@@ -10,21 +10,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.fernandocejas.android.sample.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="com.fernandocejas.android.sample.HelloWorldActivity"
+    tools:showIn="@layout/activity_hello_world">
 
     <TextView
-        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kotlin in Tests Sample"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/btn_hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_title"
-        android:text="Hello World"
+        android:text="Hello World!!!"
         tools:ignore="HardcodedText" />
 </RelativeLayout>
