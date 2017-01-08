@@ -1,22 +1,56 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+  dependencies {
+    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.5-2'
+  }
+}
+
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
   compileSdkVersion 25
-  buildToolsVersion "25.0.2"
+  buildToolsVersion '25.0.2'
 
   defaultConfig {
-    applicationId "com.fernandocejas.android.sample"
+    applicationId 'com.fernandocejas.android.sample'
     minSdkVersion 15
     targetSdkVersion 25
     versionCode 1
     versionName "1.0"
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+  }
+
+  sourceSets {
+    //Dedicated directories for tests written in Kotlin
+    test.java.srcDirs += 'src/test/kotlin'
+    androidTest.java.srcDirs += 'src/androidTest/kotlin'
+  }
+}
+
+//Ensure Kotlin will not be used in production code.
+afterEvaluate {
+  android.sourceSets.all { sourceSet ->
+    if (!sourceSet.name.startsWith('test') || !sourceSet.name.startsWith('androidTest')) {
+      sourceSet.kotlin.setSrcDirs([])
+    }
   }
 }
 
 dependencies {
   compile 'com.android.support:appcompat-v7:25.1.0'
   compile 'com.android.support:design:25.1.0'
+  compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.6"
 
   testCompile 'junit:junit:4.12'
+  testCompile "org.robolectric:robolectric:3.2.1"
+  testCompile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.6'
+  testCompile 'org.jetbrains.kotlin:kotlin-test-junit:1.0.6'
+  testCompile "com.nhaarman:mockito-kotlin:1.1.0"
+  testCompile 'org.amshove.kluent:kluent:1.14'
+
+  androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
 }
