@@ -15,14 +15,50 @@
  */
 package com.fernandocejas.android.sample
 
-import org.amshove.kluent.shouldEqual
+import org.amshove.kluent.shouldEqualTo
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
+import java.io.File
 
 class FileManagerTest : AndroidTest() {
 
+    private lateinit var fileManager: FileManager
+
+    @Before
+    fun setUp() {
+        fileManager = FileManager()
+    }
+
+    @After
+    fun tearDown() {
+        fileManager.clearDirectory(cacheDir())
+    }
+
     @Test
-    fun testSomething() {
-        true shouldEqual true
+    fun shouldWriteToFile() {
+        val fileToWrite = createDummyFile()
+        val fileContent = "content"
+
+        fileManager.writeToFile(fileToWrite, fileContent)
+
+        fileToWrite.exists() shouldEqualTo true
+    }
+
+    @Test
+    fun shouldHaveCorrectFileContent() {
+        val fileToWrite = createDummyFile()
+        val fileContent = "content\n"
+
+        fileManager.writeToFile(fileToWrite, fileContent)
+        val expectedContent = fileManager.readFileContent(fileToWrite)
+
+        expectedContent shouldEqualTo fileContent
+    }
+
+    private fun createDummyFile(): File {
+        val dummyFilePath = cacheDir().path + File.separator + "dummyFile"
+        return File(dummyFilePath)
     }
 }
 
