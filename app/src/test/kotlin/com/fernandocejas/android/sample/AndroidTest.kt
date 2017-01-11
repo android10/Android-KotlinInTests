@@ -13,34 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android.sample;
+package com.fernandocejas.android.sample
 
-import com.google.gson.Gson;
-
-/**
- * Json Serializer/Deserializer.
- */
-public class Serializer {
-
-  private final Gson gson = new Gson();
-
-  Serializer() {}
-
-  /**
-   * Serialize an object to Json.
-   *
-   * @param object to serialize.
-   */
-  public String serialize(Object object, Class clazz) {
-    return gson.toJson(object, clazz);
-  }
-
-  /**
-   * Deserialize a json representation of an object.
-   *
-   * @param string A json string to deserialize.
-   */
-  public <T> T deserialize(String string, Class<T> clazz) {
-    return gson.fromJson(string, clazz);
-  }
+abstract class AndroidTest {
 }
