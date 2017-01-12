@@ -15,7 +15,6 @@
  */
 package com.fernandocejas.android.sample.io
 
-import com.fernandocejas.android.sample.io.Serializer
 import com.fernandocejas.android.sample.users.UserEntity
 import org.amshove.kluent.shouldEqual
 import org.junit.Before
