@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android.sample
+package com.fernandocejas.android.sample.io
 
+import com.fernandocejas.android.sample.AndroidTest
 import org.amshove.kluent.shouldEqualTo
 import org.junit.After
 import org.junit.Before

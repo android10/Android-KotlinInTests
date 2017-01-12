@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android.sample;
+package com.fernandocejas.android.sample.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import com.fernandocejas.android.sample.R;
 
 public class MainActivity extends AppCompatActivity {
 

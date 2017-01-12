@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android.sample;
+package com.fernandocejas.android.sample.users;
 
 import com.google.gson.annotations.SerializedName;
 

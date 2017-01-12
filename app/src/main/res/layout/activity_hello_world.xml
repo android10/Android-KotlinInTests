@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_light"
     android:fitsSystemWindows="true"
-    tools:context="com.fernandocejas.android.sample.HelloWorldActivity">
+    tools:context="com.fernandocejas.android.sample.ui.HelloWorldActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

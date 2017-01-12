@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2017 Fernando Cejas Open Source Project
+ * Copyright (C) 2015 Fernando Cejas Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android.sample;
+package com.fernandocejas.android.sample.executor;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import io.reactivex.Scheduler;
 
-public class HelloWorldActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hello_world);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-    }
+/**
+ * Thread abstraction created to change the execution context from any thread to any other thread.
+ * Useful to encapsulate a UI Thread for example, since some job will be done in background, an
+ * implementation of this interface will change context and update the UI.
+ */
+public interface PostExecutionThread {
+  Scheduler getScheduler();
 }
