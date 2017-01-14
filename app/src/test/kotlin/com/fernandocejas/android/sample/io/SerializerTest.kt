@@ -17,7 +17,6 @@ package com.fernandocejas.android.sample.io
 
 import com.fernandocejas.android.sample.users.UserEntity
 import org.amshove.kluent.shouldEqual
-import org.junit.Before
 import org.junit.Test
 
 class SerializerTest {
@@ -34,12 +33,7 @@ class SerializerTest {
                                 "\"followers\": 7484,\n " +
                                 "\"email\": \"jcooper@babbleset.edu\"\n}"
 
-    private lateinit var serializer: Serializer
-
-    @Before
-    fun setUp() {
-        serializer = Serializer()
-    }
+    private var serializer = Serializer()
 
     @Test
     fun shouldSerialize() {

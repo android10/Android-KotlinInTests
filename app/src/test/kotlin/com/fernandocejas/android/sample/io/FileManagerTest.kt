@@ -18,18 +18,12 @@ package com.fernandocejas.android.sample.io
 import com.fernandocejas.android.sample.AndroidTest
 import org.amshove.kluent.shouldEqualTo
 import org.junit.After
-import org.junit.Before
 import org.junit.Test
 import java.io.File
 
 class FileManagerTest : AndroidTest() {
 
-    private lateinit var fileManager: FileManager
-
-    @Before
-    fun setUp() {
-        fileManager = FileManager()
-    }
+    private var fileManager = FileManager()
 
     @After
     fun tearDown() {
