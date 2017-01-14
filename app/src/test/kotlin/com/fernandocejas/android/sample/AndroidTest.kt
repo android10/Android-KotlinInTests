@@ -28,7 +28,9 @@ import java.io.File
  * Inherit from this class to create a test.
  */
 @RunWith(RobolectricTestRunner::class)
-@Config(constants = BuildConfig::class, application = AndroidTest.ApplicationStub::class, sdk = intArrayOf(21))
+@Config(constants = BuildConfig::class,
+        application = AndroidTest.ApplicationStub::class,
+        sdk = intArrayOf(21))
 abstract class AndroidTest {
 
     fun context(): Context {
@@ -36,7 +38,7 @@ abstract class AndroidTest {
     }
 
     fun cacheDir(): File {
-        return RuntimeEnvironment.application.cacheDir
+        return context().cacheDir
     }
 
     internal class ApplicationStub : Application()
