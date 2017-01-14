@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "This is an action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, R.string.action, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

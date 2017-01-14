@@ -54,5 +54,9 @@ dependencies {
   testCompile "com.nhaarman:mockito-kotlin:1.1.0"
   testCompile 'org.amshove.kluent:kluent:1.14'
 
+  androidTestCompile 'com.android.support.test:runner:0.5'
+  androidTestCompile 'com.android.support.test:rules:0.5'
   androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+  androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+  androidTestCompile 'com.android.support:support-annotations:25.1.0'
 }

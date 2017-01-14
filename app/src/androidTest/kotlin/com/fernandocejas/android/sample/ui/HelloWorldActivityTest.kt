@@ -16,27 +16,17 @@
 package com.fernandocejas.android.sample.ui
 
 import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.assertion.ViewAssertions
-import android.support.test.espresso.intent.Intents.intended
-import android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent
-import android.support.test.espresso.matcher.ViewMatchers
-import android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
+import android.support.test.espresso.assertion.ViewAssertions.matches
+import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import com.fernandocejas.android.sample.R
 import com.fernandocejas.android.sample.ui.framework.AcceptanceTest
 import org.junit.Test
 
-class MainActivityTest : AcceptanceTest<MainActivity>(MainActivity::class.java) {
+class HelloWorldActivityTest : AcceptanceTest<HelloWorldActivity>(HelloWorldActivity::class.java) {
 
     @Test
-    fun shouldOpenHelloWorldScreen() {
-        clickOnView(R.id.btn_hello_world)
-        intended(hasComponent(HelloWorldActivity::class.java.name))
-    }
-
-    @Test
-    fun shouldDisplayAction() {
-        clickOnView(R.id.fab)
-        onView(withText(R.string.action)).check(ViewAssertions.matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
+    fun shouldSayHelloWorld() {
+        onView(withId(R.id.hello)).check(matches(withText(R.string.hello)))
     }
 }

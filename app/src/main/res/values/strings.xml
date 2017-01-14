@@ -2,4 +2,6 @@
     <string name="app_name">Android-KotlinInTests</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello World Test</string>
+    <string name="action">This is an action</string>
+    <string name="hello">Hello World!!!</string>
 </resources>
