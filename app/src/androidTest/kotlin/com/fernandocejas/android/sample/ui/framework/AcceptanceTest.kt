@@ -18,18 +18,23 @@ package com.fernandocejas.android.sample.ui.framework
 import android.app.Activity
 import android.support.test.espresso.intent.rule.IntentsTestRule
 import android.support.test.filters.LargeTest
+import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import org.junit.Rule
 import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-abstract class AcceptanceTest<T : Activity>(clazz: Class<T> ) {
+abstract class AcceptanceTest<T : Activity>(clazz: Class<T>, useIntents: Boolean) {
 
     @Rule @JvmField
-    var intentRule: IntentsTestRule<T> = IntentsTestRule(clazz)
+    val testRule: ActivityTestRule<T> = createTestRule(clazz, useIntents)
 
     val checkThat: Matchers = Matchers()
     val events: Events = Events()
+
+    private fun createTestRule(clazz: Class<T>, useIntents: Boolean): ActivityTestRule<T> {
+        return if (useIntents) IntentsTestRule(clazz) else ActivityTestRule(clazz)
+    }
 }
 
