@@ -25,16 +25,12 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-abstract class AcceptanceTest<T : Activity>(clazz: Class<T>, useIntents: Boolean) {
+abstract class AcceptanceTest<T : Activity>(clazz: Class<T>) {
 
     @Rule @JvmField
-    val testRule: ActivityTestRule<T> = createTestRule(clazz, useIntents)
+    val testRule: ActivityTestRule<T> = IntentsTestRule(clazz)
 
     val checkThat: Matchers = Matchers()
     val events: Events = Events()
-
-    private fun createTestRule(clazz: Class<T>, useIntents: Boolean): ActivityTestRule<T> {
-        return if (useIntents) IntentsTestRule(clazz) else ActivityTestRule(clazz)
-    }
 }
 

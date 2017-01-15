@@ -19,7 +19,7 @@ import com.fernandocejas.android.sample.R
 import com.fernandocejas.android.sample.ui.framework.AcceptanceTest
 import org.junit.Test
 
-class MainActivityTest : AcceptanceTest<MainActivity>(MainActivity::class.java, true) {
+class MainActivityTest : AcceptanceTest<MainActivity>(MainActivity::class.java) {
 
     @Test
     fun shouldOpenHelloWorldScreen() {

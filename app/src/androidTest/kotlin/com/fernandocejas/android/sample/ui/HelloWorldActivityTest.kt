@@ -19,7 +19,7 @@ import com.fernandocejas.android.sample.R
 import com.fernandocejas.android.sample.ui.framework.AcceptanceTest
 import org.junit.Test
 
-class HelloWorldActivityTest : AcceptanceTest<HelloWorldActivity>(HelloWorldActivity::class.java, false) {
+class HelloWorldActivityTest : AcceptanceTest<HelloWorldActivity>(HelloWorldActivity::class.java) {
 
     @Test
     fun shouldSayHelloWorld() {
