@@ -16,10 +16,7 @@
 package com.fernandocejas.android.sample.ui.framework
 
 import android.app.Activity
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.intent.rule.IntentsTestRule
-import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.filters.LargeTest
 import android.support.test.runner.AndroidJUnit4
 import org.junit.Rule
@@ -32,8 +29,7 @@ abstract class AcceptanceTest<T : Activity>(clazz: Class<T> ) {
     @Rule @JvmField
     var intentRule: IntentsTestRule<T> = IntentsTestRule(clazz)
 
-    fun clickOnView(viewId: Int) {
-        onView(withId(viewId)).perform(click())
-    }
+    val checkThat: Matchers = Matchers()
+    val events: Events = Events()
 }
 

@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android.sample.ui
+package com.fernandocejas.android.sample.ui.framework
 
-import com.fernandocejas.android.sample.R
-import com.fernandocejas.android.sample.ui.framework.AcceptanceTest
-import org.junit.Test
+import android.support.annotation.IdRes
+import android.support.test.espresso.Espresso.onView
+import android.support.test.espresso.action.ViewActions.click
+import android.support.test.espresso.matcher.ViewMatchers.withId
 
-class HelloWorldActivityTest : AcceptanceTest<HelloWorldActivity>(HelloWorldActivity::class.java) {
-
-    @Test
-    fun shouldSayHelloWorld() {
-        checkThat.viewContainsText(R.id.hello, R.string.hello)
+class Events {
+    fun clickOnView(@IdRes viewId: Int) {
+        onView(withId(viewId)).perform(click())
     }
 }
